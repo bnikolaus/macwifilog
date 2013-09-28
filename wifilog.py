@@ -10,7 +10,6 @@ interval = 1
 arr =[]
 
 # setup symlink
-
 try: 
 	with open('/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'): pass
 
@@ -28,7 +27,8 @@ except IOError:
 scan = "airport -s"
 command = "airport -I"
 
-#for line in iter(process.stdout.readline,''): 
+# Setup for parsing 
+# for line in iter(process.stdout.readline,''): 
 #   arr.append(line.rstrip('\n'))
 #   text = map(lambda x: x.strip(" "), arr)
 #   print ','.join(new_arr)
