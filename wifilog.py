@@ -43,8 +43,8 @@ def _log(text):
       arr.append(line.rstrip('\n'))
       text = map(lambda x: x.strip(" " + "'"), arr)
       text = ",".join(text) 
-   print "{date} - {text}".format(date=datetime.datetime.now().strftime("%m/%d/%Y %H:%M:%S"), text=text)
-   f.write("{date} - {text}\n".format(date=datetime.datetime.now().strftime("%m/%d/%Y %H:%M:%S"), text=text))
+   print "{date},{text}".format(date=datetime.datetime.now().strftime("%m/%d/%Y %H:%M:%S"), text=text)
+   f.write("{date},{text}\n".format(date=datetime.datetime.now().strftime("%m/%d/%Y %H:%M:%S"), text=text))
 
 if __name__ == '__main__':
    startscan = subprocess.Popen(scan, stdout=subprocess.PIPE, stderr=None, shell=True)
