@@ -24,7 +24,8 @@ def _log(text):
    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=None, shell=True) 
    for line in iter(process.stdout.readline,''):
       arr.append(line.rstrip('\n'))
-      text = map(lambda x: x.strip(" "), arr)
+      text = map(lambda x: x.strip(" " + "'"), arr)
+      text = ",".join(text) 
    print "{date} - {text}".format(date=datetime.datetime.now().strftime("%m/%d/%Y %H:%M:%S"), text=text)
    f.write("{date} - {text}\n".format(date=datetime.datetime.now().strftime("%m/%d/%Y %H:%M:%S"), text=text))
 
